@@ -1,0 +1,78 @@
+<div class="bg-image d-flex">
+  <div>
+    <h3 class="h3">BIENVENUE SUR VOTRE ESPACE</h3>
+    <h6 class="h6">Entrez vos données pour démarrer une nouvelle session</h6>
+  </div>
+  <form
+    class="row justify-content-center g-3"
+    [formGroup]="connexionform"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="formulaire col-8 col-sm-8 col-lg-10">
+      <i class="icon fa-solid fa-user"></i>
+      <input
+        type="text"
+        class="control form-control"
+        formControlName="utilisateur"
+        placeholder="Nom de l'utilisateur"
+      />
+      <span
+        class="error"
+        *ngIf="
+          connexionform.get('utilisateur')?.invalid &&
+          (connexionform.get('utilisateur')?.dirty ||
+            connexionform.get('utilisateur')?.touched ||
+            isSubmitted)
+        "
+      >
+        *Obligatoire</span
+      >
+    </div>
+
+    <div class="formulaire col-8 col-sm-8 col-lg-10">
+      <i class="icon fa-solid fa-lock"></i>
+      <input
+        type="password"
+        class="control form-control"
+        formControlName="password"
+        placeholder="Mot de passe"
+        [class.invalid]="
+          connexionform.get('password')?.invalid &&
+          (connexionform.get('password')?.dirty ||
+            connexionform.get('password')?.touched ||
+            isSubmitted)
+        "
+      />
+      <span
+        class="error"
+        *ngIf="
+          connexionform.get('password')?.invalid &&
+          (connexionform.get('password')?.dirty ||
+            connexionform.get('password')?.touched ||
+            isSubmitted)
+        "
+      >
+        *Obligatoire</span
+      >
+    </div>
+    <div class="col-8 col-sm-8 col-lg-10">
+      <button
+        type="submit"
+        class="ok form-control"
+        (click)="validation()"
+        [ngClass]="{ valide: '!validerbouton' }"
+      >
+        Connexion
+      </button>
+    </div>
+    <!-- <div>
+      <button class="btn btn-primary col-md-10" type="submit">
+        Submit form
+      </button>
+    </div> -->
+  </form>
+  <div class="lien d-flex flex-column">
+    <a href="#">Souscrire</a>
+    <a href="#">Mot de passe oublié?</a>
+  </div>
+</div>

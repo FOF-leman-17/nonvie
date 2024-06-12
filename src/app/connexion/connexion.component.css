@@ -1,0 +1,80 @@
+.bg-image {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+  background-image: url("src/assets/image/backgroundLogin.jpg");
+}
+
+h3,
+h6 {
+  color: #fff;
+}
+h3 {
+  font-family: "Rubik", sans-serif;
+}
+form {
+  /* padding: 10px; */
+  margin-top: 10px;
+}
+
+input {
+  border-radius: 50px;
+  padding: 10px;
+}
+
+button {
+  padding: 10px;
+  border-radius: 50px;
+  background: rgb(224, 175, 11);
+  border: none;
+  color: #000;
+  font-size: 18px;
+  font-family: "Rubik", sans-serif;
+}
+
+.lien {
+  margin-top: 15px;
+  gap: 15px;
+}
+
+.lien a {
+  text-decoration: none;
+  font-family: "Rubik", sans-serif;
+  color: #fff;
+}
+
+/* mettre une icone dans un input */
+.formulaire {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: calc(25%);
+  left: 20px;
+  font-size: 20px;
+  color: gray;
+}
+
+.control {
+  left: 5px;
+  padding-left: 2.8rem;
+}
+
+.valide {
+  outline: none;
+  background: rgb(224, 175, 11);
+}
+
+/* .ok.focus {
+  outline: 1px #fff;
+} */
+.error {
+  color: rgb(224, 175, 11);
+  font-family: "Rubik", sans-serif;
+}
